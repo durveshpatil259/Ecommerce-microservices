@@ -1,0 +1,22 @@
+package com.project.models;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+public class Credential {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer credentialId;
+	
+	@Column(unique = true)
+	private String username;
+	private String password;
+	
+	@Column(name="role")
+	private RoleBasedAuthority roleBasedAuthority;
+
+}

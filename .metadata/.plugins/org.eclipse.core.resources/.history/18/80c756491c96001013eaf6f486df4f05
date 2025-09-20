@@ -1,0 +1,15 @@
+package com.project.dto;
+
+import com.project.models.RoleBasedAuthority;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+public class CredentialDto {
+
+	private String username;
+	private String password;
+	private RoleBasedAuthority roleBasedAuthority;
+}
