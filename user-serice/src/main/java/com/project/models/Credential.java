@@ -42,6 +42,4 @@ public class Credential {
 	@JoinColumn(name="user_id",unique = true)
 	private User user;
 	
-	
-
 }

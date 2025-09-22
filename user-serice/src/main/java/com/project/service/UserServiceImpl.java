@@ -1,6 +1,7 @@
 package com.project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.project.dto.UserDto;
 import com.project.mapper.UserMapper;
@@ -8,6 +9,7 @@ import com.project.models.Credential;
 import com.project.models.User;
 import com.project.repository.UserRepository;
 
+@Service
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
@@ -29,8 +31,8 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public UserDto findById(Integer userId) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return userRepository.findById(userId).map(userMapper::toDto).orElseThrow(()-> new RuntimeException());
 	}
 
 	@Override
